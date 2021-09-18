@@ -1,8 +1,9 @@
 // import React, { PureComponent } from 'react';
+// memo => purecomponent와 비슷한 역할
+// props가 변경되지 않으면 안에 함수 호출 안됨
+import React, { memo } from 'react';
 
-import React from 'react';
-
-const HabitAddForm = (props) => {
+const HabitAddForm = memo((props) => {
     const formRef = React.createRef();
     const inputRef = React.createRef();
     const onSubmit = (event) => {
@@ -19,7 +20,7 @@ const HabitAddForm = (props) => {
             <button className="add-button">Add</button>
         </form>
     );
-};
+});
 
 
 export default HabitAddForm;
